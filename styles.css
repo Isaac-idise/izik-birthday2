@@ -1,0 +1,37 @@
+/* Custom animations from the new code */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color);
+    animation: confetti 5s ease-in-out infinite;
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Enhance existing styles with Tailwind compatibility */
+body {
+    background-color: #1e272e; /* Fallback for non-Tailwind */
+    color: #ecf0f1;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    video {
+        width: 100%;
+    }
+}

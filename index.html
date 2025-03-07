@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac's Birthday</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat and Pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',   // Deep blue-gray (masculine base)
+                        secondary: '#e67e22', // Vibrant orange (accent)
+                        accent: '#1abc9c'     // Teal (vibrant hover)
+                    },
+                    fontFamily: {
+                        pacifico: ['Pacifico', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-800 text-gray-100 font-montserrat min-h-screen">
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none"></div>
+
+    <header class="bg-primary text-white shadow-lg py-6">
+        <h1 class="text-4xl font-pacifico text-secondary text-center">Welcome to My Birthday Page! 🎉</h1>
+        <nav class="mt-4 flex justify-center gap-6">
+            <a href="about.html" class="text-lg font-bold hover:text-accent transition-colors">About Me</a>
+            <a href="gallery.html" class="text-lg font-bold hover:text-accent transition-colors">Photos & Videos</a>
+            <a href="game.html" class="text-lg font-bold hover:text-accent transition-colors">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="relative pt-8 px-4 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-pacifico text-secondary mb-4">Celebrate With Me! 🎂</h2>
+            <p class="text-base md:text-lg text-gray-300">Grab some popcorn 🍿, share my memories, and have some fun!</p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="bg-gray-700 rounded-xl p-6 mb-8 shadow-lg">
+            <div id="countdown" class="grid grid-cols-4 gap-4 text-center">
+                <div class="bg-secondary/20 rounded-lg p-3">
+                    <span id="days" class="block text-2xl font-bold text-secondary">00</span>
+                    <span class="text-sm text-gray-400">Days</span>
+                </div>
+                <div class="bg-secondary/20 rounded-lg p-3">
+                    <span id="hours" class="block text-2xl font-bold text-secondary">00</span>
+                    <span class="text-sm text-gray-400">Hours</span>
+                </div>
+                <div class="bg-secondary/20 rounded-lg p-3">
+                    <span id="minutes" class="block text-2xl font-bold text-secondary">00</span>
+                    <span class="text-sm text-gray-400">Minutes</span>
+                </div>
+                <div class="bg-secondary/20 rounded-lg p-3">
+                    <span id="seconds" class="block text-2xl font-bold text-secondary">00</span>
+                    <span class="text-sm text-gray-400">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="mb-12">
+            <h3 class="text-xl md:text-2xl font-pacifico text-secondary mb-4 text-center">Watch My Birthday Video 🎥</h3>
+            <video width="600" controls class="w-full rounded-lg shadow-lg mx-auto">
+                <source src="video/AYMS2386.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Confetti Trigger -->
+        <button onclick="triggerConfetti()" class="bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-orange-700 transition-colors mx-auto block">
+            Spread Some Joy! 🎉
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function createConfetti() {
+            const colors = ['#e67e22', '#1abc9c', '#2c3e50', '#ecf0f1'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+            confetti.style.left = Math.random() * 100 + 'vw';
+            document.getElementById('confetti-container').appendChild(confetti);
+            setTimeout(() => confetti.remove(), 5000);
+        }
+
+        function triggerConfetti() {
+            for(let i = 0; i < 50; i++) {
+                setTimeout(createConfetti, i * 50);
+            }
+        }
+
+        function updateCountdown() {
+            const birthday = new Date('2025-03-11T23:00:00').getTime(); // Updated to March 11, 23:00
+            const now = new Date().getTime();
+            const gap = birthday - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            document.getElementById('days').innerText = Math.floor(gap / day);
+            document.getElementById('hours').innerText = Math.floor((gap % day) / hour);
+            document.getElementById('minutes').innerText = Math.floor((gap % hour) / minute);
+            document.getElementById('seconds').innerText = Math.floor((gap % minute) / second);
+        }
+
+        setInterval(updateCountdown, 1000);
+        triggerConfetti();
+    </script>
+</body>
+</html>

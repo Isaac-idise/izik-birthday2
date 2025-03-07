@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat and Pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',   // Deep blue-gray
+                        secondary: '#e67e22', // Vibrant orange
+                        accent: '#1abc9c'     // Teal
+                    },
+                    fontFamily: {
+                        pacifico: ['Pacifico', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-800 text-gray-100 font-montserrat min-h-screen">
+    <header class="bg-primary text-white shadow-lg py-6">
+        <h1 class="text-4xl font-pacifico text-secondary text-center">Photo & Video Gallery</h1>
+        <nav class="mt-4 flex justify-center gap-6">
+            <a href="index.html" class="text-lg font-bold hover:text-accent transition-colors">Home</a>
+            <a href="about.html" class="text-lg font-bold hover:text-accent transition-colors">About Me</a>
+            <a href="game.html" class="text-lg font-bold hover:text-accent transition-colors">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="relative pt-8 px-4 max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-pacifico text-secondary mb-6 text-center">My Baby & Recent Photos</h2>
+        <div class="gallery flex flex-wrap justify-center gap-4 mb-12">
+            <img src="images/9bf64be4-4195-4c63-9a48-21e538d5f39a.jpg" alt="Baby Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+            <img src="images/359c6419-c976-4b64-9530-dbe744fe5034.jpg" alt="Baby Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+            <img src="images/ed173eb0-a9fb-419a-8593-4138c30aba80.jpg" alt="Recent Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+            <img src="images/20241110_093014(0).jpg" alt="Recent Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+            <img src="images/IMG_8776.jpeg" alt="Recent Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+            <img src="images/IMG_7086.jpeg" alt="Recent Isaac" class="w-40 h-40 object-cover rounded-md shadow-lg hover:scale-105 transition-transform">
+        </div>
+
+        <h3 class="text-xl md:text-2xl font-pacifico text-secondary mb-6 text-center">Special Moments 🎥</h3>
+        <video width="500" controls class="w-full rounded-lg shadow-lg mx-auto block">
+            <source src="video/IZIKISDABOSS~4D79ECFB-D7B9-4B9E-B0A7-F9E395F16889.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </main>
+</body>
+</html>

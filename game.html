@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat and Pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',   // Deep blue-gray
+                        secondary: '#e67e22', // Vibrant orange
+                        accent: '#1abc9c'     // Teal
+                    },
+                    fontFamily: {
+                        pacifico: ['Pacifico', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-800 text-gray-100 font-montserrat min-h-screen">
+    <header class="bg-primary text-white shadow-lg py-6">
+        <h1 class="text-4xl font-pacifico text-secondary text-center">How Well Do You Know Isaac? 🎮</h1>
+        <nav class="mt-4 flex justify-center gap-6">
+            <a href="index.html" class="text-lg font-bold hover:text-accent transition-colors">Home</a>
+            <a href="about.html" class="text-lg font-bold hover:text-accent transition-colors">About Me</a>
+            <a href="gallery.html" class="text-lg font-bold hover:text-accent transition-colors">Photos & Videos</a>
+        </nav>
+    </header>
+
+    <main class="relative pt-8 px-4 max-w-4xl mx-auto">
+        <div id="quiz-container" class="bg-gray-700 rounded-xl p-6 mb-6 shadow-lg"></div>
+        <button id="submit-button" class="bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-orange-700 transition-colors mx-auto block">Submit</button>
+        <div id="quiz-result" class="text-base md:text-lg text-gray-300 mt-6"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat and Pacifico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',   // Deep blue-gray
+                        secondary: '#e67e22', // Vibrant orange
+                        accent: '#1abc9c'     // Teal
+                    },
+                    fontFamily: {
+                        pacifico: ['Pacifico', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-800 text-gray-100 font-montserrat min-h-screen">
+    <header class="bg-primary text-white shadow-lg py-6">
+        <h1 class="text-4xl font-pacifico text-secondary text-center">About Me</h1>
+        <nav class="mt-4 flex justify-center gap-6">
+            <a href="index.html" class="text-lg font-bold hover:text-accent transition-colors">Home</a>
+            <a href="gallery.html" class="text-lg font-bold hover:text-accent transition-colors">Photos & Videos</a>
+            <a href="game.html" class="text-lg font-bold hover:text-accent transition-colors">Quiz</a>
+        </nav>
+    </header>
+
+    <main class="relative pt-8 px-4 max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-pacifico text-secondary mb-6 text-center">Who is Isaac?</h2>
+        <p class="text-base md:text-lg text-gray-300 mb-6">
+            To be honest Isaac is just like you but he's only slightly different in the sense that at his core, He's always hungered for something more. He's just someone who decided I wanted more out of life. More growth, more purpose, more meaning. He didn’t want to just exist—He wanted to become something greater, to push beyond his limits, and to live fully in the person God created him to be.<br><br>
+            I believe in consistency because I know that real change doesn’t happen overnight. It’s the small, intentional steps that shape who we are. I believe in faith because, without God, I am nothing. And I believe in discipline because dreams don’t chase themselves.<br><br>
+            I’m not perfect, but I’m committed. To learning, to growing, to becoming better every single day. The journey is just beginning, and I’m all in.
+        </p>
+        <h2 class="text-2xl md:text-3xl font-pacifico text-secondary mb-6 text-center">Appreciation</h2>
+        <p class="text-base md:text-lg text-gray-300 mb-6">
+            As I enter into my new age, I just want to thank God for where he is taking me and for all that he's done in my life, I am grateful for where I am going in my tech journey, and I am sure gonna make my family proud.
+        </p>
+        <img src="images/heart.png" alt="Heart" class="mx-auto block w-32 h-32">
+    </main>
+</body>
+</html>
